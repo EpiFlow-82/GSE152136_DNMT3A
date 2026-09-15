@@ -246,6 +246,22 @@ make_track_definition <- function(i) {
   
   x <- ucsc_tracks[i, ]
   
+  track_color <- case_when(
+    x$group == "AML" ~ "178,34,34",
+    x$group == "PBMC" ~ "30,90,180"
+  )
+  
+  display_settings <- if (x$track_type == "WGBS") {
+    c(
+      "autoScale off",
+      "viewLimits 0:1"
+    )
+  } else {
+    c(
+      "autoScale on"
+    )
+  }
+  
   c(
     paste("track", x$ucsc_track),
     paste("parent", x$parent_track, "off"),
@@ -254,13 +270,13 @@ make_track_definition <- function(i) {
     paste("subGroups group=", x$group, sep = ""),
     "type bigWig",
     paste("bigDataUrl", x$bigDataUrl),
+    paste("color", track_color),
     "visibility dense",
-    "autoScale on",
+    display_settings,
     "maxHeightPixels 100:32:8",
     ""
   )
 }
-
 child_definitions <- unlist(
   lapply(
     seq_len(nrow(ucsc_tracks)),
