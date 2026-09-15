@@ -1,0 +1,5 @@
+hub GSE152136_DNMT3A
+shortLabel GSE152136 DNMT3A
+longLabel GSE152136 AML multi-omic tracks around DNMT3A
+genomesFile genomes.txt
+email Florian.Wolff@plus.ac.at

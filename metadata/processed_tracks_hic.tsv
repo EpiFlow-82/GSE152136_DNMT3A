@@ -1,0 +1,33 @@
+GSM	fname	url	GSE	sample_id	group	assay	mark	title
+GSM4604271	GSM4604271_576.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604271/suppl//GSM4604271_576.iced.mcool	GSE152135	576	PBMC	Hi-C	NA	576_Hi-C
+GSM4604272	GSM4604272_103.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604272/suppl//GSM4604272_103.iced.mcool	GSE152135	103	PBMC	Hi-C	NA	103_Hi-C
+GSM4604273	GSM4604273_673.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604273/suppl//GSM4604273_673.iced.mcool	GSE152135	673	PBMC	Hi-C	NA	673_Hi-C
+GSM4604274	GSM4604274_629.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604274/suppl//GSM4604274_629.iced.mcool	GSE152135	629	AML	Hi-C	NA	629_Hi-C
+GSM4604275	GSM4604275_270.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604275/suppl//GSM4604275_270.iced.mcool	GSE152135	270	AML	Hi-C	NA	270_Hi-C
+GSM4604276	GSM4604276_868.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604276/suppl//GSM4604276_868.iced.mcool	GSE152135	868	AML	Hi-C	NA	868_Hi-C
+GSM4604277	GSM4604277_773.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604277/suppl//GSM4604277_773.iced.mcool	GSE152135	773	AML	Hi-C	NA	773_Hi-C
+GSM4604278	GSM4604278_1953.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604278/suppl//GSM4604278_1953.iced.mcool	GSE152135	1953	AML	Hi-C	NA	1953_Hi-C
+GSM4604279	GSM4604279_566.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604279/suppl//GSM4604279_566.iced.mcool	GSE152135	566	AML	Hi-C	NA	566_Hi-C
+GSM4604280	GSM4604280_018.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604280/suppl//GSM4604280_018.iced.mcool	GSE152135	018	AML	Hi-C	NA	018_Hi-C
+GSM4604281	GSM4604281_260.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604281/suppl//GSM4604281_260.iced.mcool	GSE152135	260	AML	Hi-C	NA	260_Hi-C
+GSM4604282	GSM4604282_546.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604282/suppl//GSM4604282_546.iced.mcool	GSE152135	546	AML	Hi-C	NA	546_Hi-C
+GSM4604283	GSM4604283_1021.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604283/suppl//GSM4604283_1021.iced.mcool	GSE152135	1021	AML	Hi-C	NA	1021_Hi-C
+GSM4604284	GSM4604284_1916.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604284/suppl//GSM4604284_1916.iced.mcool	GSE152135	1916	AML	Hi-C	NA	1916_Hi-C
+GSM4604285	GSM4604285_472.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604285/suppl//GSM4604285_472.iced.mcool	GSE152135	472	AML	Hi-C	NA	472_Hi-C
+GSM4604286	GSM4604286_936.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604286/suppl//GSM4604286_936.iced.mcool	GSE152135	936	AML	Hi-C	NA	936_Hi-C
+GSM4604287	GSM4604287_1360.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604287/suppl//GSM4604287_1360.iced.mcool	GSE152135	1360	AML	Hi-C	NA	1360_Hi-C
+GSM4604288	GSM4604288_168.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604288/suppl//GSM4604288_168.iced.mcool	GSE152135	168	AML	Hi-C	NA	168_Hi-C
+GSM4604289	GSM4604289_027.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604289/suppl//GSM4604289_027.iced.mcool	GSE152135	027	AML	Hi-C	NA	027_Hi-C
+GSM4604290	GSM4604290_990.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4604nnn/GSM4604290/suppl//GSM4604290_990.iced.mcool	GSE152135	990	AML	Hi-C	NA	990_Hi-C
+GSM5688515	GSM5688515_1071.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688515/suppl//GSM5688515_1071.iced.mcool	GSE152135	1071	AML	Hi-C	NA	1071_Hi-C
+GSM5688516	GSM5688516_1324.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688516/suppl//GSM5688516_1324.iced.mcool	GSE152135	1324	AML	Hi-C	NA	1324_Hi-C
+GSM5688517	GSM5688517_424.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688517/suppl//GSM5688517_424.iced.mcool	GSE152135	424	AML	Hi-C	NA	424_Hi-C
+GSM5688518	GSM5688518_496.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688518/suppl//GSM5688518_496.iced.mcool	GSE152135	496	AML	Hi-C	NA	496_Hi-C
+GSM5688519	GSM5688519_504.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688519/suppl//GSM5688519_504.iced.mcool	GSE152135	504	AML	Hi-C	NA	504_Hi-C
+GSM5688520	GSM5688520_798.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688520/suppl//GSM5688520_798.iced.mcool	GSE152135	798	AML	Hi-C	NA	798_Hi-C
+GSM5688521	GSM5688521_838.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688521/suppl//GSM5688521_838.iced.mcool	GSE152135	838	AML	Hi-C	NA	838_Hi-C
+GSM5688522	GSM5688522_933.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688522/suppl//GSM5688522_933.iced.mcool	GSE152135	933	AML	Hi-C	NA	933_Hi-C
+GSM5688523	GSM5688523_HSPC-050.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688523/suppl//GSM5688523_HSPC-050.iced.mcool	GSE152135	HSPC-050	CD34+ HSPC	Hi-C	NA	HSPC-050_Hi-C
+GSM5688524	GSM5688524_HSPC-213.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688524/suppl//GSM5688524_HSPC-213.iced.mcool	GSE152135	HSPC-213	CD34+ HSPC	Hi-C	NA	HSPC-213_Hi-C
+GSM5688525	GSM5688525_HSPC-341.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688525/suppl//GSM5688525_HSPC-341.iced.mcool	GSE152135	HSPC-341	CD34+ HSPC	Hi-C	NA	HSPC-341_Hi-C
+GSM5688526	GSM5688526_HSPC-822.iced.mcool	https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5688nnn/GSM5688526/suppl//GSM5688526_HSPC-822.iced.mcool	GSE152135	HSPC-822	CD34+ HSPC	Hi-C	NA	HSPC-822_Hi-C
