@@ -182,34 +182,63 @@ ucsc_tracks <- copy_results |>
     )
   )
 # ============================================================
-# Parent tracks
+# Composite assay tracks with AML/PBMC subgroups
 # ============================================================
 
 parent_definitions <- c(
   "track ATAC",
-  "superTrack on",
+  "compositeTrack on",
   "shortLabel ATAC-seq",
   "longLabel ATAC-seq chromatin accessibility around DNMT3A",
+  "type bigWig",
+  "subGroup1 group Biological_group AML=AML PBMC=PBMC",
+  "dimensions dimensionX=group",
+  "sortOrder group=+",
+  "visibility hide",
   "",
+  
   "track CTCF",
-  "superTrack on",
+  "compositeTrack on",
   "shortLabel CTCF",
   "longLabel CTCF CUT&Tag signal around DNMT3A",
+  "type bigWig",
+  "subGroup1 group Biological_group AML=AML PBMC=PBMC",
+  "dimensions dimensionX=group",
+  "sortOrder group=+",
+  "visibility hide",
   "",
+  
   "track H3K27ac",
-  "superTrack on",
+  "compositeTrack on",
   "shortLabel H3K27ac",
   "longLabel H3K27ac CUT&Tag signal around DNMT3A",
+  "type bigWig",
+  "subGroup1 group Biological_group AML=AML PBMC=PBMC",
+  "dimensions dimensionX=group",
+  "sortOrder group=+",
+  "visibility hide",
   "",
+  
   "track H3K27me3",
-  "superTrack on",
+  "compositeTrack on",
   "shortLabel H3K27me3",
   "longLabel H3K27me3 CUT&Tag signal around DNMT3A",
+  "type bigWig",
+  "subGroup1 group Biological_group AML=AML PBMC=PBMC",
+  "dimensions dimensionX=group",
+  "sortOrder group=+",
+  "visibility hide",
   "",
+  
   "track WGBS",
-  "superTrack on",
+  "compositeTrack on",
   "shortLabel WGBS",
-  "longLabel WGBS CG methylation around DNMT3A (10-bp bins)",
+  "longLabel WGBS CG methylation around DNMT3A (10-bp bins; GEO processed data)",
+  "type bigWig",
+  "subGroup1 group Biological_group AML=AML PBMC=PBMC",
+  "dimensions dimensionX=group",
+  "sortOrder group=+",
+  "visibility hide",
   ""
 )
 
@@ -219,9 +248,10 @@ make_track_definition <- function(i) {
   
   c(
     paste("track", x$ucsc_track),
-    paste("parent", x$parent_track),
+    paste("parent", x$parent_track, "off"),
     paste("shortLabel", x$short_label),
     paste("longLabel", x$long_label),
+    paste("subGroups group=", x$group, sep = ""),
     "type bigWig",
     paste("bigDataUrl", x$bigDataUrl),
     "visibility dense",
@@ -237,7 +267,6 @@ child_definitions <- unlist(
     make_track_definition
   )
 )
-
 trackdb_txt <- c(
   parent_definitions,
   child_definitions
@@ -250,7 +279,7 @@ writeLines(
 
 cat("\nCreated trackDb.txt\n")
 cat("Individual BigWig tracks:", nrow(ucsc_tracks), "\n")
-cat("Parent assay tracks: 5\n")
+cat("Composite assay tracks: 5\n")
 cat("Total lines in trackDb.txt:", length(trackdb_txt), "\n")
 
 cat("\nFirst 35 lines of trackDb.txt:\n\n")
@@ -262,9 +291,6 @@ cat(
   ),
   sep = "\n"
 )
-
-
-
 
 
 

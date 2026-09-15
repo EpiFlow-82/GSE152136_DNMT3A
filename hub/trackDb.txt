@@ -1,32 +1,58 @@
 track ATAC
-superTrack on
+compositeTrack on
 shortLabel ATAC-seq
 longLabel ATAC-seq chromatin accessibility around DNMT3A
+type bigWig
+subGroup1 group Biological_group AML=AML PBMC=PBMC
+dimensions dimensionX=group
+sortOrder group=+
+visibility hide
 
 track CTCF
-superTrack on
+compositeTrack on
 shortLabel CTCF
 longLabel CTCF CUT&Tag signal around DNMT3A
+type bigWig
+subGroup1 group Biological_group AML=AML PBMC=PBMC
+dimensions dimensionX=group
+sortOrder group=+
+visibility hide
 
 track H3K27ac
-superTrack on
+compositeTrack on
 shortLabel H3K27ac
 longLabel H3K27ac CUT&Tag signal around DNMT3A
+type bigWig
+subGroup1 group Biological_group AML=AML PBMC=PBMC
+dimensions dimensionX=group
+sortOrder group=+
+visibility hide
 
 track H3K27me3
-superTrack on
+compositeTrack on
 shortLabel H3K27me3
 longLabel H3K27me3 CUT&Tag signal around DNMT3A
+type bigWig
+subGroup1 group Biological_group AML=AML PBMC=PBMC
+dimensions dimensionX=group
+sortOrder group=+
+visibility hide
 
 track WGBS
-superTrack on
+compositeTrack on
 shortLabel WGBS
-longLabel WGBS CG methylation around DNMT3A (10-bp bins)
+longLabel WGBS CG methylation around DNMT3A (10-bp bins; GEO processed data)
+type bigWig
+subGroup1 group Biological_group AML=AML PBMC=PBMC
+dimensions dimensionX=group
+sortOrder group=+
+visibility hide
 
 track t_GSM4604262_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 018
 longLabel AML 018 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604262_018_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -34,9 +60,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604269_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 027
 longLabel AML 027 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604269_027_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -44,9 +71,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604267_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 1360
 longLabel AML 1360 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604267_1360_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -54,9 +82,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604268_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 168
 longLabel AML 168 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604268_168_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -64,9 +93,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604265_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 1916
 longLabel AML 1916 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604265_1916_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -74,9 +104,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604263_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 260
 longLabel AML 260 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604263_260_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -84,9 +115,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604259_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 270
 longLabel AML 270 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604259_270_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -94,9 +126,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604266_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 472
 longLabel AML 472 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604266_472_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -104,9 +137,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604264_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 546
 longLabel AML 546 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604264_546_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -114,9 +148,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604261_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 566
 longLabel AML 566 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604261_566_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -124,9 +159,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604258_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 629
 longLabel AML 629 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604258_629_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -134,9 +170,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604260_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 773
 longLabel AML 773 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604260_773_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -144,9 +181,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604270_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel AML 990
 longLabel AML 990 — ATAC-seq — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604270_990_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -154,9 +192,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604256_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel PBMC 103
 longLabel PBMC 103 — ATAC-seq — GSE152136
+subGroups group=PBMC
 type bigWig
 bigDataUrl data/GSM4604256_103_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -164,9 +203,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604255_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel PBMC 576
 longLabel PBMC 576 — ATAC-seq — GSE152136
+subGroups group=PBMC
 type bigWig
 bigDataUrl data/GSM4604255_576_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -174,9 +214,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604257_ATAC_seq
-parent ATAC
+parent ATAC off
 shortLabel PBMC 673
 longLabel PBMC 673 — ATAC-seq — GSE152136
+subGroups group=PBMC
 type bigWig
 bigDataUrl data/GSM4604257_673_ATAC-seq_DNMT3A.bw
 visibility dense
@@ -184,9 +225,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604209_CTCF
-parent CTCF
+parent CTCF off
 shortLabel AML 018
 longLabel AML 018 — CTCF — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604209_018_CTCF_DNMT3A.bw
 visibility dense
@@ -194,9 +236,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604213_CTCF
-parent CTCF
+parent CTCF off
 shortLabel AML 027
 longLabel AML 027 — CTCF — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604213_027_CTCF_DNMT3A.bw
 visibility dense
@@ -204,9 +247,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604212_CTCF
-parent CTCF
+parent CTCF off
 shortLabel AML 168
 longLabel AML 168 — CTCF — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604212_168_CTCF_DNMT3A.bw
 visibility dense
@@ -214,9 +258,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604207_CTCF
-parent CTCF
+parent CTCF off
 shortLabel AML 270
 longLabel AML 270 — CTCF — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604207_270_CTCF_DNMT3A.bw
 visibility dense
@@ -224,9 +269,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604211_CTCF
-parent CTCF
+parent CTCF off
 shortLabel AML 472
 longLabel AML 472 — CTCF — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604211_472_CTCF_DNMT3A.bw
 visibility dense
@@ -234,9 +280,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604210_CTCF
-parent CTCF
+parent CTCF off
 shortLabel AML 546
 longLabel AML 546 — CTCF — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604210_546_CTCF_DNMT3A.bw
 visibility dense
@@ -244,9 +291,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604206_CTCF
-parent CTCF
+parent CTCF off
 shortLabel AML 629
 longLabel AML 629 — CTCF — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604206_629_CTCF_DNMT3A.bw
 visibility dense
@@ -254,9 +302,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604208_CTCF
-parent CTCF
+parent CTCF off
 shortLabel AML 773
 longLabel AML 773 — CTCF — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604208_773_CTCF_DNMT3A.bw
 visibility dense
@@ -264,9 +313,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604204_CTCF
-parent CTCF
+parent CTCF off
 shortLabel PBMC 103
 longLabel PBMC 103 — CTCF — GSE152136
+subGroups group=PBMC
 type bigWig
 bigDataUrl data/GSM4604204_103_CTCF_DNMT3A.bw
 visibility dense
@@ -274,9 +324,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604185_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel AML 018
 longLabel AML 018 — H3K27ac — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604185_018_H3K27ac_DNMT3A.bw
 visibility dense
@@ -284,9 +335,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604191_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel AML 027
 longLabel AML 027 — H3K27ac — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604191_027_H3K27ac_DNMT3A.bw
 visibility dense
@@ -294,9 +346,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604189_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel AML 1360
 longLabel AML 1360 — H3K27ac — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604189_1360_H3K27ac_DNMT3A.bw
 visibility dense
@@ -304,9 +357,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604190_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel AML 168
 longLabel AML 168 — H3K27ac — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604190_168_H3K27ac_DNMT3A.bw
 visibility dense
@@ -314,9 +368,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604187_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel AML 1916
 longLabel AML 1916 — H3K27ac — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604187_1916_H3K27ac_DNMT3A.bw
 visibility dense
@@ -324,9 +379,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604183_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel AML 270
 longLabel AML 270 — H3K27ac — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604183_270_H3K27ac_DNMT3A.bw
 visibility dense
@@ -334,9 +390,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604188_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel AML 472
 longLabel AML 472 — H3K27ac — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604188_472_H3K27ac_DNMT3A.bw
 visibility dense
@@ -344,9 +401,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604186_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel AML 546
 longLabel AML 546 — H3K27ac — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604186_546_H3K27ac_DNMT3A.bw
 visibility dense
@@ -354,9 +412,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604182_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel AML 629
 longLabel AML 629 — H3K27ac — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604182_629_H3K27ac_DNMT3A.bw
 visibility dense
@@ -364,9 +423,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604184_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel AML 773
 longLabel AML 773 — H3K27ac — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604184_773_H3K27ac_DNMT3A.bw
 visibility dense
@@ -374,9 +434,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604180_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel PBMC 103
 longLabel PBMC 103 — H3K27ac — GSE152136
+subGroups group=PBMC
 type bigWig
 bigDataUrl data/GSM4604180_103_H3K27ac_DNMT3A.bw
 visibility dense
@@ -384,9 +445,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604181_H3K27ac
-parent H3K27ac
+parent H3K27ac off
 shortLabel PBMC 673
 longLabel PBMC 673 — H3K27ac — GSE152136
+subGroups group=PBMC
 type bigWig
 bigDataUrl data/GSM4604181_673_H3K27ac_DNMT3A.bw
 visibility dense
@@ -394,9 +456,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604197_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel AML 018
 longLabel AML 018 — H3K27me3 — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604197_018_H3K27me3_DNMT3A.bw
 visibility dense
@@ -404,9 +467,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604203_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel AML 027
 longLabel AML 027 — H3K27me3 — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604203_027_H3K27me3_DNMT3A.bw
 visibility dense
@@ -414,9 +478,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604201_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel AML 1360
 longLabel AML 1360 — H3K27me3 — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604201_1360_H3K27me3_DNMT3A.bw
 visibility dense
@@ -424,9 +489,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604202_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel AML 168
 longLabel AML 168 — H3K27me3 — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604202_168_H3K27me3_DNMT3A.bw
 visibility dense
@@ -434,9 +500,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604199_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel AML 1916
 longLabel AML 1916 — H3K27me3 — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604199_1916_H3K27me3_DNMT3A.bw
 visibility dense
@@ -444,9 +511,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604195_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel AML 270
 longLabel AML 270 — H3K27me3 — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604195_270_H3K27me3_DNMT3A.bw
 visibility dense
@@ -454,9 +522,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604200_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel AML 472
 longLabel AML 472 — H3K27me3 — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604200_472_H3K27me3_DNMT3A.bw
 visibility dense
@@ -464,9 +533,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604198_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel AML 546
 longLabel AML 546 — H3K27me3 — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604198_546_H3K27me3_DNMT3A.bw
 visibility dense
@@ -474,9 +544,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604194_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel AML 629
 longLabel AML 629 — H3K27me3 — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604194_629_H3K27me3_DNMT3A.bw
 visibility dense
@@ -484,9 +555,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604196_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel AML 773
 longLabel AML 773 — H3K27me3 — GSE152136
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4604196_773_H3K27me3_DNMT3A.bw
 visibility dense
@@ -494,9 +566,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604192_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel PBMC 103
 longLabel PBMC 103 — H3K27me3 — GSE152136
+subGroups group=PBMC
 type bigWig
 bigDataUrl data/GSM4604192_103_H3K27me3_DNMT3A.bw
 visibility dense
@@ -504,9 +577,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4604193_H3K27me3
-parent H3K27me3
+parent H3K27me3 off
 shortLabel PBMC 673
 longLabel PBMC 673 — H3K27me3 — GSE152136
+subGroups group=PBMC
 type bigWig
 bigDataUrl data/GSM4604193_673_H3K27me3_DNMT3A.bw
 visibility dense
@@ -514,9 +588,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603053_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 018
 longLabel AML 018 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4603053_018_WGBS_DNMT3A.bw
 visibility dense
@@ -524,9 +599,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603058_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 027
 longLabel AML 027 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4603058_027_WGBS_DNMT3A.bw
 visibility dense
@@ -534,9 +610,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM5688604_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 1071
 longLabel AML 1071 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM5688604_1071_WGBS_DNMT3A.bw
 visibility dense
@@ -544,9 +621,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM5688605_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 1324
 longLabel AML 1324 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM5688605_1324_WGBS_DNMT3A.bw
 visibility dense
@@ -554,9 +632,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603057_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 168
 longLabel AML 168 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4603057_168_WGBS_DNMT3A.bw
 visibility dense
@@ -564,9 +643,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603054_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 260
 longLabel AML 260 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4603054_260_WGBS_DNMT3A.bw
 visibility dense
@@ -574,9 +654,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603050_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 270
 longLabel AML 270 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4603050_270_WGBS_DNMT3A.bw
 visibility dense
@@ -584,9 +665,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM5688606_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 424
 longLabel AML 424 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM5688606_424_WGBS_DNMT3A.bw
 visibility dense
@@ -594,9 +676,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603056_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 472
 longLabel AML 472 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4603056_472_WGBS_DNMT3A.bw
 visibility dense
@@ -604,9 +687,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM5688607_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 496
 longLabel AML 496 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM5688607_496_WGBS_DNMT3A.bw
 visibility dense
@@ -614,9 +698,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM5688608_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 504
 longLabel AML 504 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM5688608_504_WGBS_DNMT3A.bw
 visibility dense
@@ -624,9 +709,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603055_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 546
 longLabel AML 546 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4603055_546_WGBS_DNMT3A.bw
 visibility dense
@@ -634,9 +720,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603052_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 566
 longLabel AML 566 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4603052_566_WGBS_DNMT3A.bw
 visibility dense
@@ -644,9 +731,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603049_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 629
 longLabel AML 629 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4603049_629_WGBS_DNMT3A.bw
 visibility dense
@@ -654,9 +742,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603051_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 773
 longLabel AML 773 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM4603051_773_WGBS_DNMT3A.bw
 visibility dense
@@ -664,9 +753,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM5688609_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 798
 longLabel AML 798 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM5688609_798_WGBS_DNMT3A.bw
 visibility dense
@@ -674,9 +764,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM5688610_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 838
 longLabel AML 838 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM5688610_838_WGBS_DNMT3A.bw
 visibility dense
@@ -684,9 +775,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM5688611_WGBS
-parent WGBS
+parent WGBS off
 shortLabel AML 933
 longLabel AML 933 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=AML
 type bigWig
 bigDataUrl data/GSM5688611_933_WGBS_DNMT3A.bw
 visibility dense
@@ -694,9 +786,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603047_WGBS
-parent WGBS
+parent WGBS off
 shortLabel PBMC 103
 longLabel PBMC 103 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=PBMC
 type bigWig
 bigDataUrl data/GSM4603047_103_WGBS_DNMT3A.bw
 visibility dense
@@ -704,9 +797,10 @@ autoScale on
 maxHeightPixels 100:32:8
 
 track t_GSM4603048_WGBS
-parent WGBS
+parent WGBS off
 shortLabel PBMC 673
 longLabel PBMC 673 — WGBS CG methylation (10-bp bins; GEO processed data)
+subGroups group=PBMC
 type bigWig
 bigDataUrl data/GSM4603048_673_WGBS_DNMT3A.bw
 visibility dense
