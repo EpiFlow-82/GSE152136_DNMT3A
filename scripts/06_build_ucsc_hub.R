@@ -121,7 +121,40 @@ copy_results <- copy_results |>
 
 cat("\nBigWig files copied:", sum(copy_results$copy_ok), "\n")
 cat("Copy failures:", sum(!copy_results$copy_ok), "\n")
+# ============================================================
+# Copy hg38 CpG reference bigBed into the hub
+# ============================================================
 
+cpg_bigbed_source <- here(
+  "tracks",
+  "reference",
+  "DNMT3A_window_hg38_CpGs.bb"
+)
+
+cpg_bigbed_hub <- here(
+  "hub",
+  "data",
+  "DNMT3A_window_hg38_CpGs.bb"
+)
+
+if (!file.exists(cpg_bigbed_source)) {
+  stop(
+    "CpG reference bigBed not found: ",
+    cpg_bigbed_source
+  )
+}
+
+cpg_copy_ok <- file.copy(
+  from = cpg_bigbed_source,
+  to = cpg_bigbed_hub,
+  overwrite = TRUE
+)
+
+if (!cpg_copy_ok) {
+  stop("Failed to copy CpG reference bigBed into hub/data")
+}
+
+cat("CpG reference bigBed copied: 1\n")
 cat(
   "Files now in hub/data:",
   length(list.files(hub_data_dir, pattern = "\\.bw$")),
@@ -362,9 +395,21 @@ child_definitions <- unlist(
     make_track_definition
   )
 )
+cpg_reference_definition <- c(
+  "",
+  "track CpG_reference_hg38",
+  "shortLabel hg38 CpGs",
+  "longLabel hg38 reference CpG dinucleotides around DNMT3A",
+  "type bigBed 4",
+  "bigDataUrl data/DNMT3A_window_hg38_CpGs.bb",
+  "visibility dense",
+  "color 60,60,60",
+  ""
+)
 trackdb_txt <- c(
   parent_definitions,
   wgbs_summary_definitions,
+  cpg_reference_definition,
   child_definitions
 )
 
@@ -377,6 +422,7 @@ cat("\nCreated trackDb.txt\n")
 cat("Individual BigWig tracks:", nrow(ucsc_tracks), "\n")
 cat("WGBS group-summary tracks: 2\n")
 cat("Composite assay tracks: 5\n")
+cat("CpG reference tracks: 1\n")
 cat("Total lines in trackDb.txt:", length(trackdb_txt), "\n")
 
 cat("\nFirst 35 lines of trackDb.txt:\n\n")

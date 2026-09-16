@@ -75,6 +75,15 @@ autoScale off
 viewLimits 0:1
 maxHeightPixels 100:40:8
 
+
+track CpG_reference_hg38
+shortLabel hg38 CpGs
+longLabel hg38 reference CpG dinucleotides around DNMT3A
+type bigBed 4
+bigDataUrl data/DNMT3A_window_hg38_CpGs.bb
+visibility dense
+color 60,60,60
+
 track t_GSM4604262_ATAC_seq
 parent ATAC off
 shortLabel AML 018
