@@ -1,0 +1,9 @@
+metric	value
+Reference CpGs	16617
+Stored WGBS BigWig intervals	14004
+Stored intervals exactly 10 bp	12439
+Stored intervals longer than 10 bp	1565
+Percent stored intervals exactly 10 bp	88.8246215367038
+Median stored interval width (bp)	10
+Mean stored interval width (bp)	11.569551556698086
+Maximum stored interval width (bp)	160

@@ -44,9 +44,36 @@ shortLabel WGBS
 longLabel WGBS CG methylation around DNMT3A (10-bp bins; GEO processed data)
 type bigWig
 subGroup1 group Biological_group AML=AML PBMC=PBMC
-dimensions dimensionX=group
-sortOrder group=+
+subGroup2 level Track_level Summary=Summary Individual=Individual
+dimensions dimensionX=group dimensionY=level
+sortOrder level=+ group=+
 visibility hide
+
+track WGBS_AML_summary
+parent WGBS off
+shortLabel AML mean >=16/18
+longLabel AML mean WGBS CG methylation — >=16 of 18 samples per 10-bp bin
+subGroups group=AML level=Summary
+type bigWig
+bigDataUrl data/WGBS_AML_mean_n16of18_DNMT3A.bw
+color 178,34,34
+visibility full
+autoScale off
+viewLimits 0:1
+maxHeightPixels 100:40:8
+
+track WGBS_PBMC_summary
+parent WGBS off
+shortLabel PBMC mean 2/2
+longLabel PBMC mean WGBS CG methylation — 2 of 2 samples per 10-bp bin
+subGroups group=PBMC level=Summary
+type bigWig
+bigDataUrl data/WGBS_PBMC_mean_n2of2_DNMT3A.bw
+color 30,90,180
+visibility full
+autoScale off
+viewLimits 0:1
+maxHeightPixels 100:40:8
 
 track t_GSM4604262_ATAC_seq
 parent ATAC off
@@ -640,7 +667,7 @@ track t_GSM4603053_WGBS
 parent WGBS off
 shortLabel AML 018
 longLabel AML 018 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4603053_018_WGBS_DNMT3A.bw
 color 178,34,34
@@ -653,7 +680,7 @@ track t_GSM4603058_WGBS
 parent WGBS off
 shortLabel AML 027
 longLabel AML 027 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4603058_027_WGBS_DNMT3A.bw
 color 178,34,34
@@ -666,7 +693,7 @@ track t_GSM5688604_WGBS
 parent WGBS off
 shortLabel AML 1071
 longLabel AML 1071 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM5688604_1071_WGBS_DNMT3A.bw
 color 178,34,34
@@ -679,7 +706,7 @@ track t_GSM5688605_WGBS
 parent WGBS off
 shortLabel AML 1324
 longLabel AML 1324 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM5688605_1324_WGBS_DNMT3A.bw
 color 178,34,34
@@ -692,7 +719,7 @@ track t_GSM4603057_WGBS
 parent WGBS off
 shortLabel AML 168
 longLabel AML 168 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4603057_168_WGBS_DNMT3A.bw
 color 178,34,34
@@ -705,7 +732,7 @@ track t_GSM4603054_WGBS
 parent WGBS off
 shortLabel AML 260
 longLabel AML 260 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4603054_260_WGBS_DNMT3A.bw
 color 178,34,34
@@ -718,7 +745,7 @@ track t_GSM4603050_WGBS
 parent WGBS off
 shortLabel AML 270
 longLabel AML 270 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4603050_270_WGBS_DNMT3A.bw
 color 178,34,34
@@ -731,7 +758,7 @@ track t_GSM5688606_WGBS
 parent WGBS off
 shortLabel AML 424
 longLabel AML 424 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM5688606_424_WGBS_DNMT3A.bw
 color 178,34,34
@@ -744,7 +771,7 @@ track t_GSM4603056_WGBS
 parent WGBS off
 shortLabel AML 472
 longLabel AML 472 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4603056_472_WGBS_DNMT3A.bw
 color 178,34,34
@@ -757,7 +784,7 @@ track t_GSM5688607_WGBS
 parent WGBS off
 shortLabel AML 496
 longLabel AML 496 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM5688607_496_WGBS_DNMT3A.bw
 color 178,34,34
@@ -770,7 +797,7 @@ track t_GSM5688608_WGBS
 parent WGBS off
 shortLabel AML 504
 longLabel AML 504 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM5688608_504_WGBS_DNMT3A.bw
 color 178,34,34
@@ -783,7 +810,7 @@ track t_GSM4603055_WGBS
 parent WGBS off
 shortLabel AML 546
 longLabel AML 546 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4603055_546_WGBS_DNMT3A.bw
 color 178,34,34
@@ -796,7 +823,7 @@ track t_GSM4603052_WGBS
 parent WGBS off
 shortLabel AML 566
 longLabel AML 566 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4603052_566_WGBS_DNMT3A.bw
 color 178,34,34
@@ -809,7 +836,7 @@ track t_GSM4603049_WGBS
 parent WGBS off
 shortLabel AML 629
 longLabel AML 629 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4603049_629_WGBS_DNMT3A.bw
 color 178,34,34
@@ -822,7 +849,7 @@ track t_GSM4603051_WGBS
 parent WGBS off
 shortLabel AML 773
 longLabel AML 773 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4603051_773_WGBS_DNMT3A.bw
 color 178,34,34
@@ -835,7 +862,7 @@ track t_GSM5688609_WGBS
 parent WGBS off
 shortLabel AML 798
 longLabel AML 798 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM5688609_798_WGBS_DNMT3A.bw
 color 178,34,34
@@ -848,7 +875,7 @@ track t_GSM5688610_WGBS
 parent WGBS off
 shortLabel AML 838
 longLabel AML 838 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM5688610_838_WGBS_DNMT3A.bw
 color 178,34,34
@@ -861,7 +888,7 @@ track t_GSM5688611_WGBS
 parent WGBS off
 shortLabel AML 933
 longLabel AML 933 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM5688611_933_WGBS_DNMT3A.bw
 color 178,34,34
@@ -874,7 +901,7 @@ track t_GSM4603047_WGBS
 parent WGBS off
 shortLabel PBMC 103
 longLabel PBMC 103 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=PBMC
+subGroups group=PBMC level=Individual
 type bigWig
 bigDataUrl data/GSM4603047_103_WGBS_DNMT3A.bw
 color 30,90,180
@@ -887,7 +914,7 @@ track t_GSM4603048_WGBS
 parent WGBS off
 shortLabel PBMC 673
 longLabel PBMC 673 — WGBS CG methylation (10-bp bins; GEO processed data)
-subGroups group=PBMC
+subGroups group=PBMC level=Individual
 type bigWig
 bigDataUrl data/GSM4603048_673_WGBS_DNMT3A.bw
 color 30,90,180

@@ -138,6 +138,46 @@ cat(
 )
 
 # ============================================================
+# Copy WGBS group-summary BigWigs into the hub
+# ============================================================
+
+wgbs_summary_source <- c(
+  AML = here(
+    "tracks",
+    "group_summaries",
+    "WGBS_AML_mean_n16of18_DNMT3A.bw"
+  ),
+  PBMC = here(
+    "tracks",
+    "group_summaries",
+    "WGBS_PBMC_mean_n2of2_DNMT3A.bw"
+  )
+)
+
+stopifnot(
+  all(file.exists(wgbs_summary_source))
+)
+
+wgbs_summary_hub_files <- file.path(
+  hub_data_dir,
+  basename(wgbs_summary_source)
+)
+
+summary_copy_ok <- file.copy(
+  from = wgbs_summary_source,
+  to = wgbs_summary_hub_files,
+  overwrite = TRUE
+)
+
+cat(
+  "\nWGBS summary BigWigs copied:",
+  sum(summary_copy_ok),
+  "of",
+  length(summary_copy_ok),
+  "\n"
+)
+
+# ============================================================
 # Prepare UCSC track information
 # ============================================================
 
@@ -236,8 +276,9 @@ parent_definitions <- c(
   "longLabel WGBS CG methylation around DNMT3A (10-bp bins; GEO processed data)",
   "type bigWig",
   "subGroup1 group Biological_group AML=AML PBMC=PBMC",
-  "dimensions dimensionX=group",
-  "sortOrder group=+",
+  "subGroup2 level Track_level Summary=Summary Individual=Individual",
+  "dimensions dimensionX=group dimensionY=level",
+  "sortOrder level=+ group=+",
   "visibility hide",
   ""
 )
@@ -267,7 +308,11 @@ make_track_definition <- function(i) {
     paste("parent", x$parent_track, "off"),
     paste("shortLabel", x$short_label),
     paste("longLabel", x$long_label),
-    paste("subGroups group=", x$group, sep = ""),
+    if (x$track_type == "WGBS") {
+      paste0("subGroups group=", x$group, " level=Individual")
+    } else {
+      paste0("subGroups group=", x$group)
+    },
     "type bigWig",
     paste("bigDataUrl", x$bigDataUrl),
     paste("color", track_color),
@@ -277,6 +322,40 @@ make_track_definition <- function(i) {
     ""
   )
 }
+
+# ============================================================
+# WGBS group-summary track definitions
+# ============================================================
+
+wgbs_summary_definitions <- c(
+  "track WGBS_AML_summary",
+  "parent WGBS off",
+  "shortLabel AML mean >=16/18",
+  "longLabel AML mean WGBS CG methylation — >=16 of 18 samples per 10-bp bin",
+  "subGroups group=AML level=Summary",
+  "type bigWig",
+  "bigDataUrl data/WGBS_AML_mean_n16of18_DNMT3A.bw",
+  "color 178,34,34",
+  "visibility full",
+  "autoScale off",
+  "viewLimits 0:1",
+  "maxHeightPixels 100:40:8",
+  "",
+  
+  "track WGBS_PBMC_summary",
+  "parent WGBS off",
+  "shortLabel PBMC mean 2/2",
+  "longLabel PBMC mean WGBS CG methylation — 2 of 2 samples per 10-bp bin",
+  "subGroups group=PBMC level=Summary",
+  "type bigWig",
+  "bigDataUrl data/WGBS_PBMC_mean_n2of2_DNMT3A.bw",
+  "color 30,90,180",
+  "visibility full",
+  "autoScale off",
+  "viewLimits 0:1",
+  "maxHeightPixels 100:40:8",
+  ""
+)
 child_definitions <- unlist(
   lapply(
     seq_len(nrow(ucsc_tracks)),
@@ -285,6 +364,7 @@ child_definitions <- unlist(
 )
 trackdb_txt <- c(
   parent_definitions,
+  wgbs_summary_definitions,
   child_definitions
 )
 
@@ -295,6 +375,7 @@ writeLines(
 
 cat("\nCreated trackDb.txt\n")
 cat("Individual BigWig tracks:", nrow(ucsc_tracks), "\n")
+cat("WGBS group-summary tracks: 2\n")
 cat("Composite assay tracks: 5\n")
 cat("Total lines in trackDb.txt:", length(trackdb_txt), "\n")
 
