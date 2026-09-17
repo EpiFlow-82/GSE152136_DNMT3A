@@ -212,6 +212,20 @@ cat(
   "\n"
 )
 
+# Save reconstructed sample-level 10-bp data
+write_tsv(
+  wgbs_10bp,
+  here(
+    "metadata",
+    "WGBS_sample_level_10bp.tsv"
+  )
+)
+
+cat(
+  "\nSaved sample-level 10-bp WGBS table:",
+  here("metadata", "WGBS_sample_level_10bp.tsv"),
+  "\n"
+)
 # ============================================================
 # Step 3: calculate WGBS group summaries
 #

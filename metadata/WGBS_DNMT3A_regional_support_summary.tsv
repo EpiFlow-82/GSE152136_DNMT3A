@@ -1,0 +1,5 @@
+region	group	threshold	total_observed_bins	bins_meeting_threshold	percent_meeting_threshold
+Whole DNMT3A genomic span	AML	>=16/18	2397	2316	96.62077596996245
+Whole DNMT3A genomic span	PBMC	2/2	2383	2328	97.69198489299202
+DNMT3A intron 2	AML	>=16/18	277	272	98.19494584837545
+DNMT3A intron 2	PBMC	2/2	277	275	99.27797833935018

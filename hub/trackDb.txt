@@ -1,11 +1,12 @@
 track ATAC
 compositeTrack on
 shortLabel ATAC-seq
-longLabel ATAC-seq chromatin accessibility around DNMT3A
+longLabel ATAC-seq chromatin accessibility around DNMT3A (RPGC-normalized GEO processed data)
 type bigWig
 subGroup1 group Biological_group AML=AML PBMC=PBMC
-dimensions dimensionX=group
-sortOrder group=+
+subGroup2 level Track_level Summary=Summary Individual=Individual
+dimensions dimensionX=group dimensionY=level
+sortOrder level=+ group=+
 visibility hide
 
 track CTCF
@@ -49,6 +50,41 @@ dimensions dimensionX=group dimensionY=level
 sortOrder level=+ group=+
 visibility hide
 
+track ATAC_AML_summary
+parent ATAC off
+shortLabel AML mean n=13
+longLabel AML mean ATAC-seq RPGC signal — 13 AML patients
+subGroups group=AML level=Summary
+type bigWig
+bigDataUrl data/ATAC_AML_mean_RPGC_DNMT3A.bw
+color 178,34,34
+visibility full
+autoScale off
+viewLimits 0:30
+maxHeightPixels 100:40:8
+
+track ATAC_PBMC_summary
+parent ATAC off
+shortLabel PBMC mean n=3
+longLabel PBMC mean ATAC-seq RPGC signal — 3 PBMC samples
+subGroups group=PBMC level=Summary
+type bigWig
+bigDataUrl data/ATAC_PBMC_mean_RPGC_DNMT3A.bw
+color 30,90,180
+visibility full
+autoScale off
+viewLimits 0:30
+maxHeightPixels 100:40:8
+
+track ATAC_derived_loci
+shortLabel ATAC loci
+longLabel Derived non-overlapping 501-bp ATAC loci with AML/PBMC descriptive summaries
+type bigBed 9 +
+bigDataUrl data/ATAC_derived_501bp_loci_DNMT3A.bb
+visibility pack
+color 80,80,80
+itemRgb on
+
 track WGBS_AML_summary
 parent WGBS off
 shortLabel AML mean >=16/18
@@ -88,7 +124,7 @@ track t_GSM4604262_ATAC_seq
 parent ATAC off
 shortLabel AML 018
 longLabel AML 018 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604262_018_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -100,7 +136,7 @@ track t_GSM4604269_ATAC_seq
 parent ATAC off
 shortLabel AML 027
 longLabel AML 027 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604269_027_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -112,7 +148,7 @@ track t_GSM4604267_ATAC_seq
 parent ATAC off
 shortLabel AML 1360
 longLabel AML 1360 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604267_1360_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -124,7 +160,7 @@ track t_GSM4604268_ATAC_seq
 parent ATAC off
 shortLabel AML 168
 longLabel AML 168 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604268_168_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -136,7 +172,7 @@ track t_GSM4604265_ATAC_seq
 parent ATAC off
 shortLabel AML 1916
 longLabel AML 1916 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604265_1916_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -148,7 +184,7 @@ track t_GSM4604263_ATAC_seq
 parent ATAC off
 shortLabel AML 260
 longLabel AML 260 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604263_260_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -160,7 +196,7 @@ track t_GSM4604259_ATAC_seq
 parent ATAC off
 shortLabel AML 270
 longLabel AML 270 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604259_270_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -172,7 +208,7 @@ track t_GSM4604266_ATAC_seq
 parent ATAC off
 shortLabel AML 472
 longLabel AML 472 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604266_472_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -184,7 +220,7 @@ track t_GSM4604264_ATAC_seq
 parent ATAC off
 shortLabel AML 546
 longLabel AML 546 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604264_546_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -196,7 +232,7 @@ track t_GSM4604261_ATAC_seq
 parent ATAC off
 shortLabel AML 566
 longLabel AML 566 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604261_566_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -208,7 +244,7 @@ track t_GSM4604258_ATAC_seq
 parent ATAC off
 shortLabel AML 629
 longLabel AML 629 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604258_629_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -220,7 +256,7 @@ track t_GSM4604260_ATAC_seq
 parent ATAC off
 shortLabel AML 773
 longLabel AML 773 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604260_773_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -232,7 +268,7 @@ track t_GSM4604270_ATAC_seq
 parent ATAC off
 shortLabel AML 990
 longLabel AML 990 — ATAC-seq — GSE152136
-subGroups group=AML
+subGroups group=AML level=Individual
 type bigWig
 bigDataUrl data/GSM4604270_990_ATAC-seq_DNMT3A.bw
 color 178,34,34
@@ -244,7 +280,7 @@ track t_GSM4604256_ATAC_seq
 parent ATAC off
 shortLabel PBMC 103
 longLabel PBMC 103 — ATAC-seq — GSE152136
-subGroups group=PBMC
+subGroups group=PBMC level=Individual
 type bigWig
 bigDataUrl data/GSM4604256_103_ATAC-seq_DNMT3A.bw
 color 30,90,180
@@ -256,7 +292,7 @@ track t_GSM4604255_ATAC_seq
 parent ATAC off
 shortLabel PBMC 576
 longLabel PBMC 576 — ATAC-seq — GSE152136
-subGroups group=PBMC
+subGroups group=PBMC level=Individual
 type bigWig
 bigDataUrl data/GSM4604255_576_ATAC-seq_DNMT3A.bw
 color 30,90,180
@@ -268,7 +304,7 @@ track t_GSM4604257_ATAC_seq
 parent ATAC off
 shortLabel PBMC 673
 longLabel PBMC 673 — ATAC-seq — GSE152136
-subGroups group=PBMC
+subGroups group=PBMC level=Individual
 type bigWig
 bigDataUrl data/GSM4604257_673_ATAC-seq_DNMT3A.bw
 color 30,90,180

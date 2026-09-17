@@ -121,6 +121,7 @@ copy_results <- copy_results |>
 
 cat("\nBigWig files copied:", sum(copy_results$copy_ok), "\n")
 cat("Copy failures:", sum(!copy_results$copy_ok), "\n")
+
 # ============================================================
 # Copy hg38 CpG reference bigBed into the hub
 # ============================================================
@@ -211,6 +212,91 @@ cat(
 )
 
 # ============================================================
+# Copy ATAC group-summary and derived-locus files into the hub
+# ============================================================
+
+atac_summary_source <- c(
+  AML = here(
+    "tracks",
+    "ATAC_group_summary",
+    "ATAC_AML_mean_RPGC_DNMT3A.bw"
+  ),
+  PBMC = here(
+    "tracks",
+    "ATAC_group_summary",
+    "ATAC_PBMC_mean_RPGC_DNMT3A.bw"
+  )
+)
+
+atac_loci_source <- here(
+  "tracks",
+  "ATAC_group_summary",
+  "ATAC_derived_501bp_loci_DNMT3A.bb"
+)
+
+stopifnot(
+  all(file.exists(atac_summary_source)),
+  file.exists(atac_loci_source)
+)
+
+atac_summary_hub_files <- file.path(
+  hub_data_dir,
+  basename(atac_summary_source)
+)
+
+atac_loci_hub_file <- file.path(
+  hub_data_dir,
+  basename(atac_loci_source)
+)
+
+atac_summary_copy_ok <- file.copy(
+  from = atac_summary_source,
+  to = atac_summary_hub_files,
+  overwrite = TRUE
+)
+
+atac_loci_copy_ok <- file.copy(
+  from = atac_loci_source,
+  to = atac_loci_hub_file,
+  overwrite = TRUE
+)
+
+cat(
+  "\nATAC group-summary BigWigs copied:",
+  sum(atac_summary_copy_ok),
+  "of",
+  length(atac_summary_copy_ok),
+  "\n"
+)
+
+cat(
+  "ATAC derived-locus bigBed copied:",
+  as.integer(atac_loci_copy_ok),
+  "of 1\n"
+)
+
+cat("\nATAC hub-file QC:\n")
+
+print(
+  tibble(
+    file = c(
+      basename(atac_summary_hub_files),
+      basename(atac_loci_hub_file)
+    ),
+    exists = c(
+      file.exists(atac_summary_hub_files),
+      file.exists(atac_loci_hub_file)
+    ),
+    size_bytes = c(
+      file.info(atac_summary_hub_files)$size,
+      file.info(atac_loci_hub_file)$size
+    )
+  ),
+  n = Inf,
+  width = Inf
+)
+
+# ============================================================
 # Prepare UCSC track information
 # ============================================================
 
@@ -262,11 +348,12 @@ parent_definitions <- c(
   "track ATAC",
   "compositeTrack on",
   "shortLabel ATAC-seq",
-  "longLabel ATAC-seq chromatin accessibility around DNMT3A",
+  "longLabel ATAC-seq chromatin accessibility around DNMT3A (RPGC-normalized GEO processed data)",
   "type bigWig",
   "subGroup1 group Biological_group AML=AML PBMC=PBMC",
-  "dimensions dimensionX=group",
-  "sortOrder group=+",
+  "subGroup2 level Track_level Summary=Summary Individual=Individual",
+  "dimensions dimensionX=group dimensionY=level",
+  "sortOrder level=+ group=+",
   "visibility hide",
   "",
   
@@ -341,7 +428,7 @@ make_track_definition <- function(i) {
     paste("parent", x$parent_track, "off"),
     paste("shortLabel", x$short_label),
     paste("longLabel", x$long_label),
-    if (x$track_type == "WGBS") {
+    if (x$track_type %in% c("WGBS", "ATAC-seq")) {
       paste0("subGroups group=", x$group, " level=Individual")
     } else {
       paste0("subGroups group=", x$group)
@@ -355,7 +442,39 @@ make_track_definition <- function(i) {
     ""
   )
 }
+# ============================================================
+# ATAC group-summary track definitions
+# ============================================================
 
+atac_summary_definitions <- c(
+  "track ATAC_AML_summary",
+  "parent ATAC off",
+  "shortLabel AML mean n=13",
+  "longLabel AML mean ATAC-seq RPGC signal — 13 AML patients",
+  "subGroups group=AML level=Summary",
+  "type bigWig",
+  "bigDataUrl data/ATAC_AML_mean_RPGC_DNMT3A.bw",
+  "color 178,34,34",
+  "visibility full",
+  "autoScale off",
+  "viewLimits 0:30",
+  "maxHeightPixels 100:40:8",
+  "",
+  
+  "track ATAC_PBMC_summary",
+  "parent ATAC off",
+  "shortLabel PBMC mean n=3",
+  "longLabel PBMC mean ATAC-seq RPGC signal — 3 PBMC samples",
+  "subGroups group=PBMC level=Summary",
+  "type bigWig",
+  "bigDataUrl data/ATAC_PBMC_mean_RPGC_DNMT3A.bw",
+  "color 30,90,180",
+  "visibility full",
+  "autoScale off",
+  "viewLimits 0:30",
+  "maxHeightPixels 100:40:8",
+  ""
+)
 # ============================================================
 # WGBS group-summary track definitions
 # ============================================================
@@ -395,6 +514,23 @@ child_definitions <- unlist(
     make_track_definition
   )
 )
+
+# ============================================================
+# Derived ATAC locus annotation track
+# ============================================================
+
+atac_loci_definition <- c(
+  "track ATAC_derived_loci",
+  "shortLabel ATAC loci",
+  "longLabel Derived non-overlapping 501-bp ATAC loci with AML/PBMC descriptive summaries",
+  "type bigBed 9 +",
+  "bigDataUrl data/ATAC_derived_501bp_loci_DNMT3A.bb",
+  "visibility pack",
+  "color 80,80,80",
+  "itemRgb on",
+  ""
+)
+
 cpg_reference_definition <- c(
   "",
   "track CpG_reference_hg38",
@@ -408,11 +544,12 @@ cpg_reference_definition <- c(
 )
 trackdb_txt <- c(
   parent_definitions,
+  atac_summary_definitions,
+  atac_loci_definition,
   wgbs_summary_definitions,
   cpg_reference_definition,
   child_definitions
 )
-
 writeLines(
   trackdb_txt,
   here("hub", "trackDb.txt")
@@ -420,6 +557,8 @@ writeLines(
 
 cat("\nCreated trackDb.txt\n")
 cat("Individual BigWig tracks:", nrow(ucsc_tracks), "\n")
+cat("ATAC group-summary tracks:", 2, "\n")
+cat("Derived ATAC locus tracks:", 1, "\n")
 cat("WGBS group-summary tracks: 2\n")
 cat("Composite assay tracks: 5\n")
 cat("CpG reference tracks: 1\n")
@@ -434,10 +573,3 @@ cat(
   ),
   sep = "\n"
 )
-
-
-
-
-
-
-
